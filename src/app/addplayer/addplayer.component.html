@@ -1,0 +1,64 @@
+<div class="col-md-2"></div>
+<div class="col-md-2" >
+<form #myForm="ngForm" (ngSubmit)="AddPlayer(myForm)">
+  <a  routerLink="/home" style="text-align: center;">Go to Home</a>
+  <br>
+  <legend>Add New Player</legend>
+
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input ngModel type="text" class="form-control" id="Name" name="Name" >     
+</div>
+
+<div class="form-group">
+  <label for="Age">Age</label>
+  <input ngModel type="number" class="form-control" id="Age" name="Age">
+</div>
+
+<div class="form-group">
+  <label for="Type">Type</label>
+  <input ngModel type="text" class="form-control" id="Type" name="Type">
+</div>
+
+  
+<div class="form-group">
+  <label for="Matches">Matches</label>
+  <input ngModel type="number" class="form-control" id="Matches" name="Matches">
+</div>
+
+<div class="form-group">
+  <label for="Runs">Runs</label>
+  <input ngModel type="number" class="form-control" id="Runs" name="Runs">
+</div>
+
+<div class="form-group">
+  <label for="Wickets">Wickets</label>
+  <input ngModel type="number" class="form-control" id="Wickets" name="Wickets">
+</div>
+
+<div class="form-group">
+  <label for="BasePrice">Base Price</label>
+  <input ngModel type="number" class="form-control" id="BasePrice" name="BasePrice">
+</div>
+
+<div>
+  <button type="submit" class="btn btn-primary" style="align-content: center;">Add Player</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+

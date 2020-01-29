@@ -1,0 +1,71 @@
+
+<div class="table-responsive">
+  <div *ngIf="flag==1">
+  <table class="table table-hover" border="1">
+      <thead>
+          <tr>
+              
+              <th>Name</th>
+              <th>Logo</th>
+               
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let t of teamdata" style="width: 200px;">
+              <td><b>{{t.TeamName}}</b></td>
+              <td><img src="http://localhost:52276/TeamPhotos/{{t.TeamId}}.jpg" alt=""  style="height: 200px; width: 200px; align-content: center;"></td>     
+          </tr>
+      </tbody>
+  </table>
+</div>
+<br>
+
+
+
+
+<div *ngIf="flag==0">
+  <table class="table table-hover" border="1">
+      <thead>
+        <tr style="height: 25px;">
+          <td colspan="11" style="text-align: center;"> <button routerLink="/addteam" class="btn btn-success">Add Team</button></td>
+        </tr>
+          <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Logo</th>
+              <th>User Id</th>
+              <th colspan="2"></th>
+                  
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let t of teamdata">
+            <div class="col-sm-3">
+                <div class="well">
+                  <h4>{{t.TeamId}}</h4>
+                  <p></p> 
+                </div>
+              </div>
+              <td><b>{{t.TeamName}}</b></td>
+              <td><img src="http://localhost:52276/TeamPhotos/{{t.TeamId}}.jpg" alt="" style="height: 150px; width: 150px; align-content: center;"></td> 
+              <td>{{t.UserId}}</td>
+              <td>
+                <button type="submit" class="btn btn-primary" routerLink="/updateteam/{{t.TeamId}}">Update</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="Delete(t.TeamId)">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+</div>
+
+
+
+

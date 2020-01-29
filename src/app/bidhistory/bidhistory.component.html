@@ -1,0 +1,59 @@
+ <div class="table-responsive">
+  <div *ngIf="flag==1">
+    <table class="table table-hover" border="1">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>PlayerId</th>
+                <th>UserId</th>
+                <th>PlayerName</th>
+                <th>UserName</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+            <tr *ngFor="let p of biddata">
+                <td><img src="http://localhost:52276/PlayerPhotos/{{p.PlayerId}}.jpg" style="height: 120px; width: 120px; border-radius: 15%;"></td>
+                <td>{{p.PlayerId}}</td>
+               <td>{{p.UserId}}</td> 
+               <td>{{p.PlayerName}}</td>
+                <td>{{p.UserName}}</td>
+                <td>{{p.Amount}}</td>
+            </tr>           
+        </tbody>
+    </table>
+  </div>
+  <br>
+  <a href="/dashboard">Back to Dashboard</a>
+  </div>
+  
+  
+  <div *ngIf="flag==0">
+    <table class="table table-hover" border="1">
+      <thead>
+          <tr>
+              <th></th>
+            <th>UserId</th>
+              <th>PlayerName</th>
+              
+              <th>UserName</th>
+              <th>Amount</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let p of biddata">
+            <td><img src="http://localhost:52276/PlayerPhotos/{{p.PlayerId}}.jpg" style="height: 120px; width: 120px; border-radius: 15%;"></td>
+            <td>{{p.UserId}}</td>
+              <td>{{p.PlayerName}}</td>
+            
+              <td>{{p.UserName}}</td>
+              <td>{{p.Amount}}</td>
+          </tr>           
+      </tbody>
+  </table>
+  <a href="/userdashboard">Back to Dashboard</a>
+  <br>
+  </div>
+ 
+  

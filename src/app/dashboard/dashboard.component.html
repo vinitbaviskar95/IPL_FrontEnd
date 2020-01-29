@@ -1,0 +1,44 @@
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:18%">
+  <h2 class="w3-bar-item">Hello Admin: <u>{{name}}</u></h2>
+  <img src="http://localhost:52276/Photos/{{id}}.jpg" alt="" style="position: relative;left: 50px;  height: 120px; width: 120px;">
+<br>
+<br>
+  
+  <a href="/home" class="w3-bar-item w3-button"><b>Home..</b></a>
+
+  <a href="/dashboard/user" class="w3-bar-item w3-button"><b>User Details</b></a>
+  <a href="/dashboard/onlineusers" class="w3-bar-item w3-button"><b>Online Users</b></a>
+  <a href="/dashboard/team" class="w3-bar-item w3-button"><b>Teams</b></a>
+  <a href="/dashboard/player" class="w3-bar-item w3-button"><b>Players</b></a>
+  <a href="/dashboard/bidhistory" class="w3-bar-item w3-button"><b>View Bid History</b></a> 
+  <a href="/dashboard/changepassword" class="w3-bar-item w3-button"><b>Change Password</b></a>
+  <a href="/dashboard/passwordhistory" class="w3-bar-item w3-button"><b>Password History Log</b></a>
+
+  <a  class="w3-bar-item w3-button" (click)="Logout()"><b>Sign Out</b></a>
+
+
+</div>
+
+<div style="margin-left:25%">
+
+<div class="w3-container w3-teal">
+  <h1>Welcome to IPL Auctions</h1>
+</div>
+<br>
+<br>
+<td>
+  <router-outlet></router-outlet>
+</td>
+</div>
+      
+</body>
+
+
+
+

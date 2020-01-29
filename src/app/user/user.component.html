@@ -1,0 +1,29 @@
+
+<div class="table-responsive">
+  <table class="table table-hover" border="1">
+      <thead>
+          <tr>
+              <th>Photos</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let u of userdata">
+            <td><img src="http://localhost:52276/UserPhotos/{{u.UserId}}.jpg" style="height: 120px; width: 120px;"></td>
+              <td>{{u.UserId}}</td>
+              <td>{{u.Name}}</td>
+              <td>{{u.EmailId}}</td>
+              <td>{{u.MobileNo}}</td>
+          </tr>
+      </tbody>
+  </table>
+  <br>
+  <br>
+</div>
+
+
+
+

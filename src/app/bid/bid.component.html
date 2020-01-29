@@ -1,0 +1,57 @@
+<div class="col-md-4"></div>
+<div class="col-md-4" >
+  <form #myForm="ngForm" (ngSubmit)=AddPlayer(myForm) style="width: 50%">
+  <br>
+  <legend>Select Price to Purchase</legend>
+
+<div class="form-group">
+  <label for="PlayerId">Player Id</label>
+  <input [(ngModel)]="playerdata.PlayerId"  style="width: 300px; height: 50px;"  type="number" readonly class="form-control" id="PlayerId" name="PlayerId" >     
+</div>
+
+<div class="form-group">
+  <label for="Name">Name</label>
+  <input [(ngModel)]="playerdata.Name" type="text" style="width: 300px; height: 50px;"  readonly class="form-control" id="Name" name="Name" >     
+</div>
+
+<div class="form-group">
+<label for="Type">Type</label>
+<input [(ngModel)]="playerdata.Type" type="text" style="width: 300px; height: 50px;"  readonly class="form-control" id="Type" name="Type">
+</div>
+
+<!-- <div class="form-group">
+<label for="BasePrice">Please Select a Price to Buy </label>
+<input [(ngModel)]="playerdata.BasePrice"  type="number" style="width: 300px; height: 75px; font-size: xx-large;" class="form-control" id="BasePrice" name="BasePrice">
+</div> -->
+
+
+<div class="form-group">
+  <label for="BasePrice">Please Select a Price to Buy</label>
+  <input [(ngModel)]="playerdata.BasePrice" type="number" class="form-control"
+   required min ="200000" style="width: 300px; height: 75px; font-size: xx-large;" 
+   id="BasePrice" name="BasePrice" #BasePrice="ngModel" #spy>
+  <div *ngIf="BasePrice.invalid && (BasePrice.dirty || BasePrice.touched || BasePrice.pristine)"
+   class="alert alert-danger">
+    <div *ngIf="BasePrice.errors.required">
+        Price is required.
+    </div>
+</div>  
+</div>
+
+
+<div>
+  <button type="submit" [disabled]="!myForm.form.valid" class="button button5" style="align-content: center;">Buy Player</button>
+</div>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+

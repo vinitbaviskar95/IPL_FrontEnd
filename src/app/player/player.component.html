@@ -1,0 +1,94 @@
+<div class="table-responsive">
+<div *ngIf="flag==1">
+  <table class="table table-hover" border="1">
+      <thead>
+        <tr>
+          <td colspan="11" style="text-align: center; height: 25px;">  <button class="btn btn-success" routerLink="/addplayer">Add Players</button> </td>
+        </tr>
+          <tr>
+            <th>Photo</th>
+              <!-- <th>Id</th> -->
+              <th>Name</th>
+              <th>Age</th>
+              <th>Type</th>
+              <th>Matches</th>
+              <th>Runs</th>
+              <th>Wickets</th>
+              <th>Status</th>
+              <th>BasePrice</th>
+              <th colspan="2"></th>
+              
+          </tr>
+      </thead>
+      <tbody>
+     
+          <tr *ngFor="let p of playerdata">
+            
+             <td><img src="http://localhost:52276/PlayerPhotos/{{p.PlayerId}}.jpg" style="height: 120px; width: 120px; border-radius: 15%;"></td>
+            <!-- <td>{{p.PlayerId}}</td> -->
+              <td>{{p.Name}}</td>
+              <td>{{p.Age}}</td>
+              <td>{{p.Type}}</td>
+              <td>{{p.Matches}}</td>
+              <td>{{p.Runs}}</td>
+              <td>{{p.Wickets}}</td>
+              <td>{{p.Status}}</td>
+              <td>{{p.BasePrice}}</td>  
+              <td>
+                <button type="submit" class="btn btn-primary" routerLink="/updateplayer/{{p.PlayerId}}">Update</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="Delete(p.PlayerId)">Delete</button>
+              </td>
+          </tr>
+          
+      </tbody>
+  </table>
+  <br>
+  <br>
+</div>
+</div>
+
+<div class="table-responsive">
+<div *ngIf="flag==0">
+  <table class="table table-hover" border="1" style="align-content: center;">
+    <thead>
+        <tr>
+            <th>Photos</th>
+            <!-- <th>Id</th> -->
+            <th>Name</th>
+            <th>Age</th>
+            <th>Type</th>
+            <th>Matches</th>
+            <th>Runs</th>
+            <th>Wickets</th>
+            <th>Status</th>
+            <th>BasePrice</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of playerdata">
+          <td><img src="http://localhost:52276/PlayerPhotos/{{t.PlayerId}}.jpg" style="height: 120px; width: 120px; border-radius: 15%;"></td>
+          <!-- <td>{{t.PlayerId}}</td> -->
+            <td>{{t.Name}}</td>
+            <td>{{t.Age}}</td>
+            <td>{{t.Type}}</td>
+            <td>{{t.Matches}}</td>
+            <td>{{t.Runs}}</td>
+            <td>{{t.Wickets}}</td>
+            <td>{{t.Status}}</td>
+            <td>{{t.BasePrice}}</td>
+            <td>
+              <button type="submit" *ngIf="!t.Status" class="btn btn-success" routerLink="/bid/{{t.PlayerId}}">Bid Player</button>
+            </td>
+        </tr>
+         </tbody>
+  </table>
+  <br>
+  <br>
+</div>
+</div>
+
+
+

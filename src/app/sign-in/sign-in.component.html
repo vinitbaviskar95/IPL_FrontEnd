@@ -1,0 +1,168 @@
+<!-- 
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<form role="form" #myForm="ngForm" (ngSubmit)="Login(myForm.value)" class="login-form">
+  <h1 style="text-align: center;">Login Here</h1>
+
+  <div class="form-group">
+      <label for="name">Username</label>
+      <input ngModel type="text" class="form-control" id="name" name="name">
+  </div>
+
+  <div class="form-group">
+      <label for="password">Password</label>
+      <input ngModel type="text" class="form-control" id="password" name="password">
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me next time </label>
+  </div>
+
+  <div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  
+
+  <a class="btn2"  routerLink="/changepassword" role="button">Forgot Password</a>
+</div>
+</form>
+
+</div> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color:blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+img.avatar {
+  width: 60%;
+  text-align: center;
+  margin-left: 120px;
+  border-radius: 60%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.imgcontainer
+{
+  text-align: center;
+  width: 75%;
+  height: 75%;
+  padding-left: 10px;
+  padding: 20px 12px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+
+<table style="margin-top: 10;">
+  <tr>
+    <td><button (click)="switchLanguage('en')">English</button></td>
+    <td><button (click)="switchLanguage('jp')">Japenese</button></td>
+    <td><button (click)="switchLanguage('hi')">Marathi</button></td>
+  </tr>
+</table>
+
+
+
+<body style="padding-left: 450px">
+
+<h3>Login Form</h3>
+
+
+
+<form #myForm="ngForm" (ngSubmit)=Login(myForm) style="width: 50%">
+  <div class="imgcontainer">
+    <img src="src\assets\image\IPL-logo.jpg" alt="signin" class="avatar" >
+  </div>
+
+  <div class="container" style="width: 100%">
+    <label for="name"><b>{{ "EmailId" | translate }}</b></label>
+    <input ngModel type="text" placeholder="Enter Email" id="EmailId"  required name="EmailId" #EmailId="ngModel" #spy>
+    <div *ngIf="EmailId.invalid && (EmailId.dirty || EmailId.touched || EmailId.pristine)" class="alert alert-danger">
+      <div *ngIf="EmailId.errors.required">
+          Email id is required.
+      </div>
+      <div *ngIf="EmailId.errors.email">
+          Email Id must be valid.
+      </div>
+  </div>   
+
+    <label for="Password"><b>{{ "Password" | translate }}</b></label>
+    <input ngModel type="password" placeholder="Enter Password" id="Password" required minlength="4" maxlength="10" name="Password"  #Password="ngModel" #spy>
+    <div *ngIf="Password.invalid && (Password.dirty || Password.touched || Password.pristine)" class="alert alert-danger">
+      <div *ngIf="Password.errors.required">
+          Password is required.
+      </div>
+      <div *ngIf="Password.errors.minlength">
+          Password must be at least 4 characters long..
+      </div>
+  </div>  
+    
+    <button type="submit" [disabled]="!myForm.form.valid" class="btn btn-primary" style="align-content: center;">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1;width: 100%">
+    <span class="psw">Forgot <a href="/forgetpassword">password?</a>
+      <br>Register <a href="/signup">New User?</a>
+    </span>
+  </div>
+</form>
+
+</body>
+</html>
